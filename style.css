@@ -4,7 +4,7 @@
 
 .container{
     background-color: lightslategray;
-    height: 900px;
+    height: 775px;
     width: 600px;
     padding: 10px;
     display: flex;
@@ -16,7 +16,7 @@
 .operator, .num{
     padding: 5px;
     height: 100px;
-    width: 193px;
+    width: 145px;
 }
 
 .clear {
