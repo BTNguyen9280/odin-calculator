@@ -31,7 +31,8 @@
     height: 200px;
     width: 580px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -48,12 +49,4 @@
     justify-content: center;
 }
 
-/*    gap: 10px;
-/*    flex-direction: column;
-/*}
-/*
-/*.display {
-/*    background-color: antiquewhite;
-/*}
-/*
 
