@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    background-color: lightslategray;
+    height: 900px;
+    width: 600px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.operator, .num{
+    padding: 5px;
+    height: 100px;
+    width: 193px;
+}
+
+.clear {
+    padding: 5px;
+    height: 150px;
+    width: 370px
+}
+
+.display {
+    background-color: antiquewhite;
+    padding: 5px;
+    height: 200px;
+    width: 580px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numbers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.clc {
+    width: 580px;
+    display: flex;
+    justify-content: center;
+}
+
+/*    gap: 10px;
+/*    flex-direction: column;
+/*}
+/*
+/*.display {
+/*    background-color: antiquewhite;
+/*}
+/*
+
