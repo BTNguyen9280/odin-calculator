@@ -1,5 +1,6 @@
 const numberButton = document.querySelectorAll('.num')
-const clearButton = document.querySelectorAll('.clear')
+const clearButton = document.querySelectorAll('#clear')
+const ceButton = document.querySelectorAll('#ce')
 const operatorButton = document.querySelectorAll('.operator')
 const equalsButton = document.querySelector('.equals')
 let display1 = document.querySelector('.display1')
@@ -62,6 +63,9 @@ operatorButton.forEach(button => {
       updateDisplay()
       display2.textContent = display1.textContent
     }
+    if(display1.textContent){
+      display2.textContent = display1.textContent
+    }
     display2.textContent += ` ${e.target.textContent} `;
   })
 })
@@ -70,6 +74,12 @@ clearButton.forEach(button => {
   button.addEventListener('click', (e) => {
     display1.textContent = '';
     display2.textContent = '';
+  })
+})
+
+ceButton.forEach(button => {
+  button.addEventListener('click', (e) => {
+    display2.textContent = ''
   })
 })
 
