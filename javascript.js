@@ -1,25 +1,9 @@
-const one = document.querySelector('#one') 
-const two = document.querySelector('#two')
-const three = document.querySelector('#three')
-const four = document.querySelector('#four')
-const five = document.querySelector('#five')
-const six = document.querySelector('#six')
-const seven = document.querySelector('#seven')
-const eight = document.querySelector('#eight')
-const nine = document.querySelector('#nine')
-const zero = document.querySelector('#zero')
-const decimal = document.querySelector('#decimal')
-const addOperator = document.querySelector('#add')
-const subtractOperator = document.querySelector('#subtract')
-const multiplyOperator = document.querySelector('#multiply')
-const divideOperator = document.querySelector('#divide')
-const equalOperator = document.querySelector('#equals')
-const display1 = document.querySelector('.display1')
-const display2 = document.querySelector('.display2')
-const clear = document.querySelector('#clear')
-const CE = document.querySelector('#ce')
-
-
+const numberButton = document.querySelectorAll('.num')
+const clearButton = document.querySelectorAll('.clear')
+const operatorButton = document.querySelectorAll('.operator')
+const equalsButton = document.querySelector('.equals')
+let display1 = document.querySelector('.display1')
+let display2 = document.querySelector('.display2')
 
 
 const add = function(a,b) {
@@ -61,14 +45,28 @@ let num1 ;
 let num2 ;
 let operator ;
 
-CE.addEventListener('click', function (e) {
-  display2.textContent = '';
-  num2 = ''
+numberButton.forEach(button => {
+  button.addEventListener('click', (e) => {
+    display2.textContent += e.target.textContent;
+  })
 })
 
-clear.addEventListener('click', function(e) {
-  display1.textContent = '';
-  display2.textContent='';
-  num1 = ''
-  num2 = ''
+operatorButton.forEach(button => {
+  button.addEventListener('click', (e) => {
+    display2.textContent += ` ${e.target.textContent} `;
+  })
+})
+
+clearButton.forEach(button => {
+  button.addEventListener('click', (e) => {
+    display1.textContent = '';
+    display2.textContent = '';
+  })
+})
+
+equalsButton.addEventListener('click', (e) => {
+  let displayEquation = display2.textContent;
+  let displayEquationSplit = displayEquation.split(" ");
+  display1.textContent = operate(Number(displayEquationSplit[0]), displayEquationSplit[1], Number(displayEquationSplit[2]))
+  display2.textContent = ''
 })
