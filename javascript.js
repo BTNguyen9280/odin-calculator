@@ -5,7 +5,8 @@ const equalsButton = document.querySelector('.equals')
 let display1 = document.querySelector('.display1')
 let display2 = document.querySelector('.display2')
 
-
+//Math Functions
+const operators = ['+', '-', '*', '/']
 const add = function(a,b) {
     return a+b
   };
@@ -41,9 +42,12 @@ const add = function(a,b) {
     }
  }
 
-let num1 ; 
-let num2 ;
-let operator ;
+ const updateDisplay = function() {
+  let displayEquation = display2.textContent;
+  let displayEquationSplit = displayEquation.split(" ");
+  display1.textContent = operate(Number(displayEquationSplit[0]), displayEquationSplit[1], Number(displayEquationSplit[2]))
+ }
+
 
 numberButton.forEach(button => {
   button.addEventListener('click', (e) => {
@@ -53,6 +57,11 @@ numberButton.forEach(button => {
 
 operatorButton.forEach(button => {
   button.addEventListener('click', (e) => {
+    const operatorExists = operators.some(operator => display2.textContent.includes(operator))
+    if(operatorExists){
+      updateDisplay()
+      display2.textContent = display1.textContent
+    }
     display2.textContent += ` ${e.target.textContent} `;
   })
 })
@@ -65,8 +74,7 @@ clearButton.forEach(button => {
 })
 
 equalsButton.addEventListener('click', (e) => {
-  let displayEquation = display2.textContent;
-  let displayEquationSplit = displayEquation.split(" ");
-  display1.textContent = operate(Number(displayEquationSplit[0]), displayEquationSplit[1], Number(displayEquationSplit[2]))
+  updateDisplay()
   display2.textContent = ''
 })
+
