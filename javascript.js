@@ -74,7 +74,10 @@ clearButton.forEach(button => {
 })
 
 equalsButton.addEventListener('click', (e) => {
-  updateDisplay()
+  const operatorExists = operators.some(operator => display2.textContent.includes(operator))
+  if(operatorExists) {
+    updateDisplay()
   display2.textContent = ''
+  }
 })
 
