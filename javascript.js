@@ -31,16 +31,16 @@ const add = function(a,b) {
 
  const operate = function (a,op,b) {
     if (op == '+') {
-        return add(a,b)
+        return add(a,b).toFixed(4)
     }
     if (op == '-') {
-        return subtract(a,b)
+        return subtract(a,b).toFixed(4)
     }
     if (op == '*') {
-        return multiply(a,b)
+        return multiply(a,b).toFixed(4)
     }
     if (op == '/') {
-        return divide(a,b)
+        return divide(a,b).toFixed(4)
     }
  }
 
@@ -51,19 +51,16 @@ const add = function(a,b) {
  }
 
 decimalButton.addEventListener('click', (e) => {
- /* if (!(display2.textContent.includes('.'))) {
-    display2.textContent += e.target.textContent;
-  }*/
   let displayEquation = display2.textContent;
   let displayEquationSplit = displayEquation.split(" ");
   console.log(displayEquationSplit)
+  if(!(displayEquationSplit[0].includes('.')) && !(displayEquationSplit[2])) {
+    display2.textContent += e.target.textContent;
+  }
   if (displayEquationSplit[2]) {
     if (!displayEquationSplit[2].includes('.')) {
       display2.textContent += e.target.textContent;
     }
-  }
-  if(!(displayEquationSplit[0].includes('.'))) {
-    display2.textContent += e.target.textContent;
   }
 })
 
