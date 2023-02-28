@@ -57,7 +57,7 @@ decimalButton.addEventListener('click', (e) => {
   if(!(displayEquationSplit[0].includes('.')) && !(displayEquationSplit[2])) {
     display2.textContent += e.target.textContent;
   }
-  if (displayEquationSplit[2]) {
+  if (displayEquationSplit[2]|| displayEquationSplit[0].includes('.')) {
     if (!displayEquationSplit[2].includes('.')) {
       display2.textContent += e.target.textContent;
     }
